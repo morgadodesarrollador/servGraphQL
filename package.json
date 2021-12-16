@@ -5,6 +5,6 @@
     "author": "RicardoGeek",
     "main": "app.js",
     "scripts": {
-      "start": "node app.js"
+      "start": "FAST_REFRESH=false npm-run-all -p client server"
     }
   }
