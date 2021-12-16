@@ -1,0 +1,10 @@
+{
+    "name": "docker_web_app",
+    "version": "1.0.0",
+    "description": "Node.js en Docker",
+    "author": "RicardoGeek",
+    "main": "app.js",
+    "scripts": {
+      "start": "node app.js"
+    }
+  }
