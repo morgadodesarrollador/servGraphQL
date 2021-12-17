@@ -8,7 +8,7 @@ const HOST = '0.0.0.0';
 const app = express();
 app.get('/', (req, res) => {
   console.log('hola caracola');
-  res.send('<h1> bienvenidos al concierto !!\n');
+  res.send('<h1> bienvenidos al concierto, gracias por estar aqui !!\n');
 });
 
 app.listen(PORT, HOST);
