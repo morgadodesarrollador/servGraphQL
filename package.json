@@ -5,6 +5,9 @@
     "author": "RicardoGeek",
     "main": "app.js",
     "scripts": {
-      "start": "FAST_REFRESH=false npm-run-all -p client server"
+        "start": "FAST_REFRESH=false npm-run-all -p client server"
+    },
+    "dependencies": {
+        "express": "^4.17.2"
     }
-  }
+}
