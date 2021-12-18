@@ -8,7 +8,6 @@ const HOST = '0.0.0.0';
 const app = express();
 app.get('/', (req, res) => {
   console.log('hola caracola');
-  res.send('<h1> Viva JenkinS y la madre que lo parió !!</h1>\n');
   res.send('<h1> Autor: Morgado</h1>\n');
   
 });
