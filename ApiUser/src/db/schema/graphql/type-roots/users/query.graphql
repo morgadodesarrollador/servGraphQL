@@ -1,0 +1,16 @@
+"""
+    Vamos a trabajar para obtener información de los usuarios de la base de datos, entre ellos:
+    la lista de usuarios, validar las credenciales, obtener la iformación del usuario registrado y obterner la autenticacion mediaente token jwt
+"""
+type Query {
+  "ista de usuarios de la BD "
+  users: [User!]!
+  "login para la validación"
+  login(
+      "email del usuario reistrado en la BD"
+      email: String!, 
+      "contraseña del usuario de la BD"
+      password: String!): ResultAPI!
+  "obtener nuestros datos mediante autenticacion por token JWT"
+  me: ResultAPI!
+}

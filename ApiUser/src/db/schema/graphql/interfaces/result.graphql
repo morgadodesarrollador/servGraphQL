@@ -1,0 +1,6 @@
+
+interface ResultAPI {
+    status: Boolean!
+    message: String!
+    elementSelect: String!
+}
