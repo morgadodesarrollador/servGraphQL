@@ -61,12 +61,18 @@ class GraphQLServer {
         };
         //añadimos el contexto a las propiedades de ApolloServer
         const apolloServer = new ApolloServer({
+            
             schema: this.schema,
             introspection: true,
             context
         });
         await apolloServer.start();
-        apolloServer.applyMiddleware({app: this.app, cors: true})
+        apolloServer.applyMiddleware({
+            app: this.app, 
+            cors: {
+                origin: '*',			// <- allow request from all domains
+                credentials: true
+            }})
     }
 
     private configRoutes(){
