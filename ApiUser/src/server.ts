@@ -6,10 +6,11 @@ import { GraphQLSchema } from "graphql";
 import { createServer, Server } from "http";
 import Database from "./config/database";
 import environments from "./config/environment";
-import { IContext } from "./db/interfaces/IContext";
+import { IContext } from "./interfaces/IContext";
+import expressPlayground from 'graphql-playground-middleware-express';
 
-const typeDefs = require('./db/schema');
-const resolvers = require('./db/resolvers');
+const typeDefs = require('./schema');
+const resolvers = require('./resolvers');
 
 class GraphQLServer {
     //propiedades
@@ -67,12 +68,10 @@ class GraphQLServer {
             context
         });
         await apolloServer.start();
-        apolloServer.applyMiddleware({
-            app: this.app, 
-            cors: {
-                origin: '*',			// <- allow request from all domains
-                credentials: true
-            }})
+        apolloServer.applyMiddleware({app: this.app, cors: true})
+        this.app.use('/', expressPlayground({
+           endpoint: '/graphql' 
+        }))
     }
 
     private configRoutes(){
@@ -96,3 +95,4 @@ class GraphQLServer {
 }
 
 export default GraphQLServer;
+

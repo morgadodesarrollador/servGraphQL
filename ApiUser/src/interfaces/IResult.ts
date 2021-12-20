@@ -1,16 +1,15 @@
 import { IUser } from "./IUser";
 
-export interface IResultAPI {
+export interface IResult {
     status: boolean;
     message: string;
     elementSelect: string;
-    data?: Tipos;
 }
 export interface IResultUser {
     status: boolean;
     message: string;
     elementSelect: string;
-    data?: IUser;
+    user?: IUser;
 }
 export interface IResultToken {
     status: boolean;

@@ -1,8 +1,8 @@
 import { IResolvers } from '@graphql-tools/utils';
-import { ELEMENTS_SELECT } from '../../config/constants';
+import { ELEMENTS_SELECT } from '../../../config/constants';
 
 const resolverTypes: IResolvers = {
-    ResultAPI: {   // resolver la interface de graphql
+    Result: {   // resolver la interface de graphql
         __resolveType( root: { elementSelect: string }){
             if (root.elementSelect === ELEMENTS_SELECT.USER){
                 return 'ResultUser'
@@ -10,6 +10,7 @@ const resolverTypes: IResolvers = {
             if (root.elementSelect === ELEMENTS_SELECT.TOKEN){
                 return 'ResultToken'
             }
+           // return null; // GraphQLError is thrown
         }
     }
 }

@@ -1,8 +1,8 @@
 
 type Mutation {
   " añadir, registrar usuarios de la BD"
-  add(user: UserInput): ResultAPI!
+  add(user: UserInput): Result!
   " modificar datos del usuario "
-  update(user: UserInput): ResultAPI
+  update(user: UserInput): Result!
 
 }

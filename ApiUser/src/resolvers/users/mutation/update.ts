@@ -2,8 +2,8 @@ import { IResolvers } from "@graphql-tools/utils";
 import { Db } from "mongodb";
 import { IUser } from "../../../interfaces/IUser";
 import { IResultUser } from "../../../interfaces/IResult";
-import JWT from "../../../../lib/jwt";
-import { ELEMENTS_SELECT } from "../../../../config/constants";
+import JWT from "../../../lib/jwt";
+import { ELEMENTS_SELECT } from "../../../config/constants";
 
 const mutationResolvers: IResolvers = {
     Mutation: { 
@@ -36,7 +36,7 @@ const mutationResolvers: IResolvers = {
                     return {
                         status: true,
                         message: 'El usuario ha sido actualizado correctamente',
-                        data: args.user,
+                        user: args.user,
                         elementSelect: ELEMENTS_SELECT.USER
                     };
                 })

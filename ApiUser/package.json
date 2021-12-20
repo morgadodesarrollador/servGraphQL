@@ -33,6 +33,7 @@
     "express": "^4.17.1",
     "graphql": "^15.7.2",
     "graphql-import-node": "^0.0.4",
+    "graphql-playground-middleware-express": "^1.7.23",
     "graphql-tools": "^8.2.0",
     "jsonwebtoken": "^8.5.1",
     "mongodb": "^4.2.1",

@@ -1,5 +1,4 @@
-
-interface ResultAPI {
+interface Result {
     status: Boolean!
     message: String!
     elementSelect: String!

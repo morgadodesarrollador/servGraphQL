@@ -1,10 +1,10 @@
-import { IUser } from './../../../interfaces/IUser';
+import { IUser } from '../../../interfaces/IUser';
 import { IResolvers } from "@graphql-tools/utils";
 import { Db } from "mongodb";
 import { IResultToken, IResultUser } from "../../../interfaces/IResult";
 import bcrypt from "bcrypt";
-import JWT from "../../../../lib/jwt";
-import { ELEMENTS_SELECT } from '../../../../config/constants';
+import JWT from "../../../lib/jwt";
+import { ELEMENTS_SELECT } from '../../../config/constants';
 const queryResolvers: IResolvers = {
     Query: {
         
@@ -36,9 +36,9 @@ const queryResolvers: IResolvers = {
                 return {
                     status: true,
                     message: 'Usuario cargado',
-                  //  token: new JWT().sign(userD as IUser, 3600 )
+                    elementSelect: ELEMENTS_SELECT.TOKEN,
                     token: new JWT().sign(userD as IUser, 3600 ),
-                    elementSelect: ELEMENTS_SELECT.TOKEN
+                    
                 };
             }).catch( (error) => {
                 return {

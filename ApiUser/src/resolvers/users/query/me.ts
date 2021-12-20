@@ -1,8 +1,8 @@
-import { IUser } from './../../../interfaces/IUser';
+import { IUser } from '../../../interfaces/IUser';
 import { IResolvers } from "@graphql-tools/utils";
 import { IResultUser } from "../../../interfaces/IResult";
-import JWT from "../../../../lib/jwt";
-import { ELEMENTS_SELECT } from '../../../../config/constants';
+import JWT from "../../../lib/jwt";
+import { ELEMENTS_SELECT } from '../../../config/constants';
 const queryResolvers: IResolvers = {
     Query: {
         me: async (_: void, __: unknown, context: { token: string }): Promise<IResultUser> => {
@@ -17,8 +17,9 @@ const queryResolvers: IResolvers = {
             return {
                 status: true,
                 message: "Token OK",
-                data: (info as unknown as { user: IUser}).user, //ver el sign,
-                elementSelect: ELEMENTS_SELECT.USER
+                elementSelect: ELEMENTS_SELECT.USER,
+                user: (info as unknown as { user: IUser}).user, //ver el sign,
+                
             };
         }
     },

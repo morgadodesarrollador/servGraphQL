@@ -10,7 +10,7 @@ type Query {
       "email del usuario reistrado en la BD"
       email: String!, 
       "contraseña del usuario de la BD"
-      password: String!): ResultAPI!
+      password: String!): Result!
   "obtener nuestros datos mediante autenticacion por token JWT"
-  me: ResultAPI!
+  me: Result!
 }

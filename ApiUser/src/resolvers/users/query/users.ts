@@ -1,4 +1,4 @@
-import { IUser } from './../../../interfaces/IUser';
+import { IUser } from '../../../interfaces/IUser';
 import { IResolvers } from "@graphql-tools/utils";
 import { Db } from "mongodb";
 

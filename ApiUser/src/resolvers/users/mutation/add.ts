@@ -3,13 +3,13 @@ import { Db } from "mongodb";
 import { IUser } from "../../../interfaces/IUser";
 import { IResultUser } from "../../../interfaces/IResult";
 import  bcrypt  from "bcrypt";
-import { ELEMENTS_SELECT } from "../../../../config/constants";
+import { ELEMENTS_SELECT } from "../../../config/constants";
 
 const mutationResolvers: IResolvers = {
     Mutation: { 
         // root, parametros de entrada, contexto de la bd retornado
         add: async(_: void, args: { user: IUser }, context: { db: Db } ): Promise<IResultUser> => {
-            //console.log(context.db);
+            console.log(context.db);
             //usaurio existe
             const userCheck = await context.db.collection("users").findOne({email: args.user.email});
             if (userCheck){
@@ -42,7 +42,7 @@ const mutationResolvers: IResolvers = {
                         status: true,
                         message: 'El usuario ha sido insertado',
                         elementSelect: ELEMENTS_SELECT.USER,
-                        data: args.user
+                        user: args.user
                     };
                 })
                 .catch( (error) => {
