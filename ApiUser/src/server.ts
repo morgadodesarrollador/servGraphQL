@@ -64,7 +64,9 @@ class GraphQLServer {
         const apolloServer = new ApolloServer({
             
             schema: this.schema,
-            introspection: true,
+            //introspection: true,
+            introspection: process.env.NODE_ENV !== 'production',
+
             context
         });
         await apolloServer.start();
